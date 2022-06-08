@@ -8,7 +8,7 @@ RGCS::setS3AuthenticationMMD()
 
 df_prometheus <- getPrometheusDataset()
 
-df_submissions <- RGCS::makeSubmissionDataset()
+df_submissions <- RGCS::makeSubmissionSummary()
 
 ui <- fluidPage(
 
