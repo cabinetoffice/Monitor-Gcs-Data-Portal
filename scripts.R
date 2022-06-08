@@ -100,3 +100,35 @@ aws.s3::s3write_using(
   object = "gcsdataportal_prometheus/clean/compiled.csv",
   bucket = bucket
 )
+
+
+# t <- getAllRawPrometheusData()
+#
+# u <-
+#   t %>%
+#   dplyr::bind_rows(.id = "filename") %>%
+#   dplyr::rowwise() %>%
+#   dplyr::mutate(
+#     timestamp = stringr::str_split(filename, pattern = "/") %>%
+#     unlist() %>%
+#     tail(1) %>%
+#     stringr::str_replace(".csv", "") %>%
+#     lubridate::as_datetime())
+#
+# v <-
+#   u %>%
+#   dplyr::select(-filename)
+#
+# aws.s3::s3write_using(
+#   v,
+#   FUN = readr::write_excel_csv,
+#   object = "gcsdataportal_prometheus/clean/compiled.csv",
+#   bucket = bucket
+# )
+# t <-
+#   getPrometheusDataset()
+#
+#
+# df <-
+#   t %>%
+#   dplyr::select(instance, measure, value, timestamp)

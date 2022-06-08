@@ -96,10 +96,8 @@ df_compiled_new <-
   dplyr::bind_rows(new_entry)
 
 aws.s3::s3write_using(
-  new_entries,
+  df_compiled_new,
   FUN = readr::write_excel_csv,
   object = "gcsdataportal_prometheus/clean/compiled.csv",
   bucket = bucket
 )
-
-
